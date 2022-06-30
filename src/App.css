@@ -39,6 +39,8 @@ img{
 }
 tr th{
   background: #cef835;
+  font-size: 1.2em;
+  height: 2em;
 }
 
 .App-logo {

@@ -19,7 +19,6 @@ function App() {
         <h1 display="inline">My Company</h1>
         <button onClick={getAll}>Get Users</button>
       </nav>
-
       <table>
         <tr>
           <th>ID</th>
@@ -28,7 +27,7 @@ function App() {
           <th>Last Name</th>
           <th>Profile Picture</th>
         </tr>
-        {users.map((element) => {
+        { users.map((element) => {
           return <User arg={element}  key={element.id}/>
         })}
 
