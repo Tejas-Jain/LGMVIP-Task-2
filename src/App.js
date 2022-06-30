@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import User from './component/User'
 
 function App() {
+  const [users, setUsers] = useState([])
+
+  const getAll = async ()=>{
+    const raw = await fetch('https://reqres.in/api/users?page=1')
+    const rawData = await raw.json()
+    setUsers(rawData.data);
+    // console.log(users)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="nav">
+        <h1 display="inline">My Company</h1>
+        <button onClick={getAll}>Get Users</button>
+      </nav>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>E-Mail</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Profile Picture</th>
+        </tr>
+        {users.map((element) => {
+          return <User arg={element}  key={element.id}/>
+        })}
+
+      </table>
     </div>
   );
 }

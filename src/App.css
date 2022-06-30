@@ -1,5 +1,44 @@
+.body{
+  background: rgb(48, 190, 251);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav{
+  padding: 0px;
+
+  background-color: #8ceeb6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav button{
+  height: fit-content;
+  width: auto;
+  font-size: 1.5em;
+  border-radius: 10%;
+  background-color: rgb(17, 136, 255);
+}
+h1{
+  padding: 0;
+  margin: 0.4em;
+  font-size: 2.5em;
+}
+table{
+  border-spacing: 0;
+}
+td,th{
+  margin: 0px;
+  border: 1px solid black;
+}
+img{
+  width: 5em;
+}
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+tr th{
+  background: #cef835;
 }
 
 .App-logo {
